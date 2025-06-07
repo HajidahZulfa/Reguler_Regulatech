@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuis | Regulatech</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">Regulatech</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="regulasi.html">Regulasi</a>
+      <a href="kuis.html" class="active">Kuis</a>
+      <a href="tentang.html">Tentang Kami</a>
+    </nav>
+    <button id="dark-toggle">Dark</button>
+  </header>
+
+  <main class="kuis-container">
+    <div class="kuis-card">
+      <img src="img/kuis.jpg" alt="kuis" class="kuis-img" />
+      <div class="kuis-content">
+        <h2>Kuis</h2>
+        <p class="subtitle">Biar tahu kalau</p>
+        <p class="desc">
+          Lorem ipsum dos color sit amet. Waktu itu bukan hanya bisa DM agar kesempatan menang menjadi lebih besar untuk berubah menjadi lebih besar untuk berubah menjadi
+        </p>
+
+        
+        <div class="form-item">
+  <label for="topik">Topik Regulasi</label>
+  <select id="topik" class="form-box">
+    <option>Penggunaan AI</option>
+    <option>UU ITE</option>
+    <option>Bijak Sosmed</option>
+    <option>Perlindungan Data</option>
+    <option>Lainnya...</option>
+  </select>
+</div>
+
+<div class="form-item">
+  <label for="jumlah">Jumlah Pertanyaan</label>
+  <select id="jumlah" class="form-box">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+    <option>20</option>
+    <option>25</option>
+  </select>
+</div>
+
+<div class="form-item">
+  <label for="mode">Mode Pertanyaan</label>
+  <select id="mode" class="form-box">
+    <option>Pilihan Ganda</option>
+    <option>Esai</option>
+    <option>Benar / Salah</option>
+    <option>Cek Tipe</option>
+  </select>
+</div>
+
+    </div>
+  </main>
+
+  <script>
+    const toggle = document.getElementById('dark-toggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
