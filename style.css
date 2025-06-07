@@ -344,3 +344,94 @@ select.form-box {
   background-size: 0.65rem;
   cursor: pointer;
 }
+
+/* style.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.site-header {
+  background-color: #0f172a;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subhead {
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.highlight {
+  background-color: #fef3c7;
+  border-left: 6px solid #f59e0b;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.quiz-box {
+  background-color: #e0f2fe;
+  border-left: 6px solid #0284c7;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.quiz-item {
+  margin-bottom: 1rem;
+}
+
+.quiz-item button {
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quiz-item button:hover {
+  background-color: #0369a1;
+}
+
+.note {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #4b5563;
+}
+
+.closing {
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: #d1fae5;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  background-color: #f3f4f6;
+}
