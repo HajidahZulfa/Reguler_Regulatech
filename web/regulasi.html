@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
     <h1 class="logo">Regulatech</h1>
     <nav>
@@ -20,8 +19,6 @@
     <button id="dark-toggle">Dark</button>
   </header>
 
-
-  <!-- Search -->
   <section class="search-section">
     <div class="search-banner">
       <img src="regulasi pict.jpg" alt="Search Banner"/>
@@ -38,16 +35,7 @@
     </div>
   </section>
 
-  <!-- Card List -->
   <section class="card-list">
-    <div class="card">
-      <img src="regulasi pict.jpg" alt="Regulasi"/>
-      <h3>Regulasi 1 
-        <a href="uu-ite.html"> UU ITE</a>
-      </h3>
-      <p>Pasal</p>
-      <p>Lorem ipsum dos color sit amet. Waktu itu bukan hanya bisa DM agar kesempatan menang...</p>
-    </div>
   </section>
 
   <div class="carousel-container">
@@ -59,7 +47,6 @@
     <div class="carousel-item">3</div>
     <div class="carousel-item">4</div>
     <div class="carousel-item">5</div>
-    <!-- Tambah item sesuai kebutuhan -->
   </div>
 
   <button class="arrow right" id="nextBtn">→</button>
@@ -71,58 +58,51 @@
   const nextBtn = document.getElementById('nextBtn');
 
   let currentIndex = 0;
-  const totalItems = carousel.children.length;
+  const totalItems = carousel ? carousel.children.length : 0;
 
   function updateCarousel() {
+    if (!carousel || totalItems === 0) return;
+
     const offset = -currentIndex * 100;
     carousel.style.transform = `translateX(${offset}%)`;
 
-    // Panah akan sembunyi kalau udah mentok
-    prevBtn.classList.toggle('hidden', currentIndex === 0);
-    nextBtn.classList.toggle('hidden', currentIndex === totalItems - 1);
+    if (prevBtn) prevBtn.classList.toggle('hidden', currentIndex === 0);
+    if (nextBtn) nextBtn.classList.toggle('hidden', currentIndex === totalItems - 1);
   }
 
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarousel();
-    }
-  });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < totalItems - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+  }
 
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < totalItems - 1) {
-      currentIndex++;
-      updateCarousel();
-    }
-  });
-
-  // Inisialisasi
   updateCarousel();
 </script>
 
 <script src="theme.js"></script>
 
 <script>
-  const toggleBtn = document.querySelector('header button');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-  });
-</script>
-
-<script>
   const toggleButton = document.getElementById('dark-toggle');
 
-  // 🔁 Pas buka halaman, cek localStorage
   const currentTheme = localStorage.getItem('theme');
   if (currentTheme === 'dark') {
     document.body.classList.add('dark');
   }
 
-  // 🔘 Event toggle dark mode
   toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark');
 
-    // 📝 Simpan status ke localStorage
     if (document.body.classList.contains('dark')) {
       localStorage.setItem('theme', 'dark');
     } else {
@@ -130,6 +110,8 @@
     }
   });
 </script>
+
+<script src="regulasi-script.js"></script>
 
 </body>
 </html>

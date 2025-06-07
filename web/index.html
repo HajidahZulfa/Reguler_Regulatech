@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Regulatech - Beranda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Regulatech</h1>
+    <nav>
+      <a class="pagenow" href="index.html">Beranda</a>
+      <a href="regulasi.html">Regulasi</a>
+      <a href="kuis.html" class="active">Kuis</a>
+      <a href="tentang.html">Tentang Kami</a>
+    </nav>
+    <button id="dark-toggle">Dark</button>
+  </header>
+
+  <section class="hero">
+    <img src="regulasi pict.jpg" alt="Image"/>
+    <div class="hero-text">
+      <h2>Regulasi 1</h2>
+      <h3>Pasal</h3>
+      <p>
+        Lorem ipsum dos color sit amet. Waktu itu bukan hanya bisa DM agar kesempatan menang menjadi lebih besar untuk berubah menjadi.
+      </p>
+    </div>
+  </section>
+
+  <section class="carousel">
+    <div class="carousel-container" id="main-carousel-container">
+      <button class="arrow left" id="prevBtn">←</button>
+
+      <div class="carousel" id="carousel">
+        <div class="carousel-item">1</div>
+        <div class="carousel-item">2</div>
+        <div class="carousel-item">3</div>
+        <div class="carousel-item">4</div>
+        <div class="carousel-item">5</div>
+      </div>
+
+      <button class="arrow right" id="nextBtn">→</button>
+    </div>
+  </section>
+
+<script src="theme.js"></script>
+
+<script>
+  const toggleButton = document.getElementById('dark-toggle');
+  const currentTheme = localStorage.getItem('theme');
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark');
+  }
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if (document.body.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+  const carousel = document.getElementById('carousel');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let currentIndex = 0;
+  const totalItems = carousel ? carousel.children.length : 0;
+
+  function updateCarousel() {
+    if (!carousel || totalItems === 0) return;
+
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+
+    if (prevBtn) prevBtn.classList.toggle('hidden', currentIndex === 0);
+    if (nextBtn) nextBtn.classList.toggle('hidden', currentIndex === totalItems - 1);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < totalItems - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+  }
+
+  updateCarousel();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Regulasi | Regulatech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">Regulatech</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a class="pagenow" href="regulasi.html">Regulasi</a>
+      <a href="kuis.html">Kuis</a>
+      <a href="tentang.html">Tentang Kami</a>
+    </nav>
+    <button id="dark-toggle">Dark</button>
+  </header>
+
+  <main class="content" id="regulation-detail-container">
+    <p>Memuat detail regulasi...</p>
+  </main>
+
+  <script src="theme.js"></script>
+  <script>
+    const toggleButton = document.getElementById('dark-toggle');
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const regulationId = urlParams.get('id');
+      const detailContainer = document.getElementById('regulation-detail-container');
+
+      if (!regulationId) {
+        detailContainer.innerHTML = '<p>ID regulasi tidak ditemukan. Kembali ke <a href="regulasi.html">halaman regulasi</a>.</p>';
+        return;
+      }
+
+      try {
+        const response = await fetch(`http://localhost:5500/api/regulations/${regulationId}`);
+        if (!response.ok) {
+          if (response.status === 404) {
+            detailContainer.innerHTML = '<p>Regulasi tidak ditemukan.</p>';
+          } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return;
+        }
+        const regulation = await response.json();
+        displayRegulationDetail(regulation);
+      } catch (error) {
+        console.error('Error fetching regulation detail:', error);
+        detail.innerHTML = '<p>Gagal memuat detail regulasi. Silakan coba lagi nanti.</p>';
+      }
+    });
+
+    function displayRegulationDetail(reg) {
+      const detailContainer = document.getElementById('regulation-detail-container');
+      if (!detailContainer) return;
+
+      detailContainer.innerHTML = `
+        <h1>${reg.title}</h1>
+        <p class="subhead">${reg.category}</p>
+        ${reg.regulation_number ? `<p><strong>Nomor Regulasi:</strong> ${reg.regulation_number}</p>` : ''}
+        ${reg.date_enacted ? `<p><strong>Tanggal Disahkan:</strong> ${reg.date_enacted}</p>` : ''}
+        <section class="highlight">
+            <h2>Ringkasan</h2>
+            <p>${reg.summary}</p>
+        </section>
+        ${reg.relevant_articles && reg.relevant_articles.length > 0 ?
+            `<section class="highlight">
+                <h2>Pasal Terkait</h2>
+                <ul>
+                    ${reg.relevant_articles.map(article => `<li>${article}</li>`).join('')}
+                </ul>
+            </section>` : ''
+        }
+        ${reg.source_link ? `<p><a href="${reg.source_link}" target="_blank">Baca Dokumen Lengkap</a></p>` : ''}
+      `;
+    }
+  </script>
+</body>
+</html>
