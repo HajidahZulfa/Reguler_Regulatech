@@ -17,7 +17,7 @@ const regulations = [
         date_enacted: "2008, diubah 2016",
         summary: "Mengatur tentang informasi dan transaksi elektronik, termasuk ketentuan pidana terkait konten ilegal, pencemaran nama baik, dan transaksi elektronik.",
         relevant_articles: ["Pasal 27 (Pencemaran Nama Baik)", "Pasal 28 (Berita Bohong)", "Pasal 30 (Akses Ilegal)"],
-        source_link: "https://jdih.kominfo.go.id/produk_hukum/view/id/296",
+        source_link: "https://jdih.komdigi.go.id/produk_hukum/view/id/555/t/undangundang+nomor+19+tahun+2016",
         keywords: ["UU ITE", "informasi", "transaksi", "elektronik", "pidana", "pencemaran", "berita bohong"]
     },
     {
@@ -28,7 +28,7 @@ const regulations = [
         date_enacted: "2022",
         summary: "Mengatur perlindungan data pribadi individu, hak subjek data, kewajiban pengendali dan prosesor data, serta sanksi administratif dan pidana.",
         relevant_articles: ["Pasal 20 (Hak Subjek Data)", "Pasal 27 (Kewajiban Pengendali Data)", "Bab VII (Sanksi Administratif)"],
-        source_link: "https://jdih.setkab.go.id/PUUdoc/176962/UU_Nomor_27_Tahun_2022.pdf",
+        source_link: "https://www.hukumonline.com/klinik/a/uu-pdp--landasan-hukum-pelindungan-data-pribadi-lt5d588c1cc649e/",
         keywords: ["UU PDP", "data pribadi", "perlindungan", "privasi", "subjek data", "pengendali data"]
     },
     {
@@ -39,7 +39,7 @@ const regulations = [
         date_enacted: "Ongoing",
         summary: "Mencakup prinsip-prinsip etika dalam pengembangan dan penggunaan AI, seperti transparansi, akuntabilitas, keadilan, dan keamanan.",
         relevant_articles: ["Prinsip Keadilan", "Prinsip Akuntabilitas", "Prinsip Transparansi"],
-        source_link: "https://kominfo.go.id/content/detail/36712/pedoman-etika-pengembangan-kecerdasan-artifisial-di-indonesia/0/berita_satker",
+        source_link: "https://jdih.komdigi.go.id/produk_hukum/view/id/883/t/surat+edaran+menteri+komunikasi+dan+informatika+nomor+9+tahun+2023",
         keywords: ["etika AI", "kecerdasan artifisial", "prinsip AI", "pengembangan AI"]
     },
     {
@@ -50,7 +50,7 @@ const regulations = [
         date_enacted: "2018",
         summary: "Mengatur tentang Inovasi Keuangan Digital, termasuk *regulatory sandbox*, perizinan, dan pengawasan aktivitas fintech.",
         relevant_articles: ["Definisi IKD", "Mekanisme Regulatory Sandbox", "Perizinan Fintech"],
-        source_link: "https://www.ojk.go.id/id/kanal/iknb/Pages/POJK-Nomor-13-POJK.02-2018-tentang-Inovasi-Keuangan-Digital-di-Sektor-Jasa-Keuangan.aspx",
+        source_link: "https://www.ojk.go.id/id/regulasi/Documents/Pages/POJK-2-2024-Penyelenggaraan-Inovasi-Teknologi-Sektor-Keuangan/POJK%203%20Tahun%202024%20Penyelenggaraan%20Inovasi%20Teknologi%20Sektor%20Keuangan.pdf",
         keywords: ["fintech", "inovasi keuangan digital", "OJK", "regulasi fintech", "regulatory sandbox"]
     },
     {
@@ -61,7 +61,7 @@ const regulations = [
         date_enacted: "2014",
         summary: "Melindungi karya cipta di bidang ilmu pengetahuan, seni, dan sastra, termasuk karya digital dan sanksi terhadap pelanggaran hak cipta.",
         relevant_articles: ["Hak Ekonomi", "Hak Moral", "Sanksi Pelanggaran"],
-        source_link: "https://jdih.dgip.go.id/search/detail/undang-undang-nomor-28-tahun-2014-tentang-hak-cipta-66442",
+        source_link: "https://www.hukumonline.com/berita/a/dasar-hukum-hak-cipta-lt62b9143a498ff/2",
         keywords: ["hak cipta", "karya cipta", "digital", "UU Hak Cipta", "kekayaan intelektual"]
     },
     {
@@ -72,7 +72,7 @@ const regulations = [
         date_enacted: "2020, diubah 2021",
         summary: "Mengatur pendaftaran, kewajiban, dan sanksi bagi Penyelenggara Sistem Elektronik (PSE) lingkup privat, termasuk platform digital global.",
         relevant_articles: ["Pendaftaran PSE", "Kewajiban Konten", "Pemblokiran"],
-        source_link: "https://jdih.kominfo.go.id/produk_hukum/view/id/1118",
+        source_link: "https://jdih.komdigi.go.id/produk_hukum/view/id/883/t/surat+edaran+menteri+komunikasi+dan+informatika+nomor+9+tahun+2023",
         keywords: ["platform digital", "PSE", "Kominfo", "regulasi platform", "pendaftaran PSE"]
     }
 ];
